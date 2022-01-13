@@ -11,11 +11,11 @@ def _get_log_pair(n, base):
 def _abs_g_dump(n, base):
     if n < base or not n:
         return (yield str(n))
-    while operator.sub(*(logpair := _get_log_pair(n, base))) and n:
+    while operator.sub(*(log_pair := _get_log_pair(n, base))) and n:
         n, remainder = divmod(n, base)
         yield str(remainder)
     else:
-        yield str(0) * logpair[1]
+        yield str(0) * log_pair[1]
         yield str(1)
 
 def abs_g_dump(n, base):
@@ -33,3 +33,4 @@ if __name__ == '__main__':
     while True:
         main()
         print()
+  
